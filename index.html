@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <!-- SEO -->
+  <meta name="author" content="Joel Bello">
+  <meta name="description" content="WhatsApp Link Generator">
+  <meta name="keywords" content="whatsapp link generator, whatsapp, link, generator, click-to-chat, click, chat, marketing">
+  <meta name="copyright" content="Joel Bello" />
+  <meta name="reply-to" content="joelumc@gmail.com" />
+
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="3 Days">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=auto">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <!-- JQuery & QRCode -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js" integrity="sha256-DhdpoP64xch/Frz8CiBQE12en55NX+RhlPGRg6KWm5s=" crossorigin="anonymous"></script>
+
+  <script src="index.js"></script>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" integrity="sha256-aPeK/N8IHpHsvPBCf49iVKMdusfobKo2oxF8lRruWJg=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-checkradio@1.1.1/dist/css/bulma-checkradio.min.css" integrity="sha256-ej+83V4GB9ok2X22EvJ/ggEzzJ+gaZjm7G/Neq7wboQ=" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <title>WhatsApp Link Generator</title>
+</head>
+
+<body>
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <div class="card">
+              <img class="wa-logo" src="./images/whatsapp.png" alt="WhatsApp">
+
+              <div class="card-content">
+                <form id="generateLinkForm">
+                  <div class="field">
+                    <div class="field-label label has-text-left">
+                      <label class="label">¿Cuál es tu teléfono? </label>
+                    </div>
+
+                    <div class="field-body">
+                      <div class="field is-expanded">
+                        <div class="field has-addons">
+                          <div class="control is-expanded">
+                            <input class="input" type="number" placeholder="Ej: 3640576312" id="phoneNumberText" required>
+                    <p class="help">Recuerda poner el código de tu país seguido del código de área. Ej: Para Argentína sería 54, para México sería 52.
+                      .</p>
+                         
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="field">
+                    <label class="label">¿Qué mensaje personalizado quieres enviar cuando tus clientes te contacten?</label>
+
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Ej: Hola, Necesito información sobre..." id="messageText">
+                    </div>
+                  </div>
+
+                  <button tpye="submit" class="button is-fullwidth is-primary">
+                    <span class="icon">
+                      <i class="fas fa-link"></i>
+                    </span>
+
+                    <span>Generar enlace</span>
+                  </button>
+                </form>
+
+                <hr>
+
+                <div class="field is-horizontal">
+                  <div class="field-body">
+                    <div class="field is-expanded">
+                      <label class="label">Aquí está tu link:</label>
+
+                      <div class="field has-addons">
+                        <div class="control is-expanded">
+                          <input class="input" type="text" readonly id="linkText">
+                        </div>
+
+                        <div class="control">
+                          <button class="button" id="copyLinkButton">
+                            <span class="icon is-small">
+                              <i class="fas fa-copy"></i>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <p class="help">Sugerimos usar un acortador de URL como <a href="https://cutt.ly">Cutt.ly</a> para mantener su enlace conciso, favoreciendo la legibilidad y el intercambio.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Font Awesome 5 -->
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</body>
+
+</html>
